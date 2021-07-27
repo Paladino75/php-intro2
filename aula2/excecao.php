@@ -21,6 +21,11 @@ $usuario = [
 ];
 
 
-validarUsuario($usuario);
+try {
+	$status = validarUsuario($usuario);
+}catch (Exception $e) {
+	echo $e->getMessage().PHP_EOL;
+	die();
+}
 
 echo "\n ... executando... \n".PHP_EOL;
