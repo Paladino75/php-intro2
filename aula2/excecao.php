@@ -5,7 +5,7 @@
 
 	if (empty($usuario['codigo']) || empty($usuario['nome']) || empty($usuario['idade'])){
 
-		return false;
+		throw new Exception("Campos obrigatórios não foram preenchidos!");
 	}
 
 	return true;
@@ -21,15 +21,6 @@ $usuario = [
 ];
 
 
-$usuariovalido = validarUsuario($usuario);
-
-
-if (!$usuariovalido){
-
-	echo "Usuário Inválido!".PHP_EOL;
-
-	return false;
-
-}
+validarUsuario($usuario);
 
 echo "\n ... executando... \n".PHP_EOL;
